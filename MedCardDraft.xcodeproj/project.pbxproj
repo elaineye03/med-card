@@ -24,6 +24,9 @@
 		B934AB9C23B8334D00C10710 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934AB9B23B8334D00C10710 /* Location.swift */; };
 		B934AB9E23B85E0900C10710 /* MyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934AB9D23B85E0900C10710 /* MyLabel.swift */; };
 		B934ABA023B878DB00C10710 /* prgrmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934AB9F23B878DB00C10710 /* prgrmViewController.swift */; };
+		B934ABA223B9456F00C10710 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA123B9456F00C10710 /* SetUpViewController.swift */; };
+		B934ABA423B9579400C10710 /* MedicalCardRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA323B9579400C10710 /* MedicalCardRowCell.swift */; };
+		B934ABA623B957CE00C10710 /* MedicalCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA523B957CE00C10710 /* MedicalCardRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		B934AB9B23B8334D00C10710 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		B934AB9D23B85E0900C10710 /* MyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLabel.swift; sourceTree = "<group>"; };
 		B934AB9F23B878DB00C10710 /* prgrmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prgrmViewController.swift; sourceTree = "<group>"; };
+		B934ABA123B9456F00C10710 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
+		B934ABA323B9579400C10710 /* MedicalCardRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCardRowCell.swift; sourceTree = "<group>"; };
+		B934ABA523B957CE00C10710 /* MedicalCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCardRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,9 @@
 				B934AB8B23B7D70600C10710 /* MedicalCardViewController.swift */,
 				B934AB9923B7F33800C10710 /* Text911ViewController.swift */,
 				B934AB7D23B7D5F700C10710 /* Main.storyboard */,
+				B934ABA323B9579400C10710 /* MedicalCardRowCell.swift */,
+				B934ABA523B957CE00C10710 /* MedicalCardRow.swift */,
+				B934ABA123B9456F00C10710 /* SetUpViewController.swift */,
 				B934AB8023B7D5F900C10710 /* Assets.xcassets */,
 				B934AB8223B7D5F900C10710 /* LaunchScreen.storyboard */,
 				B934AB8523B7D5F900C10710 /* Info.plist */,
@@ -178,13 +187,16 @@
 				B934AB9623B7DEAE00C10710 /* EmergencyContact.swift in Sources */,
 				B934AB8C23B7D70600C10710 /* MedicalCardViewController.swift in Sources */,
 				B934AB9023B7DE6500C10710 /* Personal.swift in Sources */,
+				B934ABA623B957CE00C10710 /* MedicalCardRow.swift in Sources */,
 				B934AB9423B7DE9700C10710 /* DrContact.swift in Sources */,
 				B934AB9823B7E69D00C10710 /* SendMessageViewController.swift in Sources */,
+				B934ABA223B9456F00C10710 /* SetUpViewController.swift in Sources */,
 				B934AB9223B7DE7F00C10710 /* MedicalInfo.swift in Sources */,
 				B934AB7A23B7D5F700C10710 /* SceneDelegate.swift in Sources */,
 				B934AB9C23B8334D00C10710 /* Location.swift in Sources */,
 				B934AB9E23B85E0900C10710 /* MyLabel.swift in Sources */,
 				B934AB8E23B7DE3F00C10710 /* MedicalCard.swift in Sources */,
+				B934ABA423B9579400C10710 /* MedicalCardRowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
