@@ -15,11 +15,11 @@ class MedicalCard : Codable{
 
     var Person: Personal?
     var Medinfo: MedicalInfo?
-    var dContact: Dictionary<String, DrContact>
+    var dContact: DrContact?
     var eContact: Dictionary<String, EmergencyContact>
     var Location: Location?
     
-    init(person: Personal, medical: MedicalInfo, doctor: Dictionary<String, DrContact>, emergency: Dictionary<String, EmergencyContact>, loc: Location)
+    init(person: Personal, medical: MedicalInfo, doctor: DrContact, emergency: Dictionary<String, EmergencyContact>, loc: Location)
     {
         Person = person
         Medinfo = medical
@@ -31,7 +31,7 @@ class MedicalCard : Codable{
     {
         Person = nil
         Medinfo = nil
-        dContact = [String: DrContact]()
+        dContact = nil
         eContact = [String: EmergencyContact]()
         Location = nil
     }

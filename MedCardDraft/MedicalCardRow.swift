@@ -48,13 +48,13 @@ extension MedicalCardRow {
     let eRow = MedicalCardRow(key: "Address", value:  MedicalCard.shared.Person!.Address)
     cardRows.append(eRow)
     
-    let fRow = MedicalCardRow(key: "Phone", value:  MedicalCard.shared.Person!.Address)
+    let fRow = MedicalCardRow(key: "Phone", value:  MedicalCard.shared.Person!.Phone)
     cardRows.append(fRow)
     
-    let gRow = MedicalCardRow(key: "Email", value:  MedicalCard.shared.Person!.Address)
+    let gRow = MedicalCardRow(key: "Email", value:  MedicalCard.shared.Person!.Email)
     cardRows.append(gRow)
     
-    let hRow = MedicalCardRow(key: "SSN", value:  MedicalCard.shared.Person!.Address)
+    let hRow = MedicalCardRow(key: "SSN", value:  MedicalCard.shared.Person!.SSN)
     cardRows.append(hRow)
     
     let titleMed = MedicalCardRow(key: "Medical Info", value:  "(TITLE)")
@@ -106,18 +106,17 @@ extension MedicalCardRow {
     let titleDoc = MedicalCardRow(key: "Doctor Contact", value:  "(TITLE)")
     cardRows.append(titleDoc)
     
-    for (num, dcontact) in MedicalCard.shared.dContact {
+    
+    let nameRow = MedicalCardRow(key: "Name", value: MedicalCard.shared.dContact!.Name)
+    cardRows.append(nameRow)
+    let phoneRow = MedicalCardRow(key: "Phone", value:  MedicalCard.shared.dContact!.Phone)
+    cardRows.append(phoneRow)
+    let emailRow = MedicalCardRow(key: "Email", value:  MedicalCard.shared.dContact!.Email)
+    cardRows.append(emailRow)
+    let kindRow = MedicalCardRow(key: "Kind", value:  MedicalCard.shared.dContact!.Kind)
+    cardRows.append(kindRow)
         
-        let nameRow = MedicalCardRow(key: "Name", value:  dcontact.Name)
-        cardRows.append(nameRow)
-        let phoneRow = MedicalCardRow(key: "Phone", value:  dcontact.Phone)
-        cardRows.append(phoneRow)
-        let emailRow = MedicalCardRow(key: "Email", value:  dcontact.Email)
-        cardRows.append(emailRow)
-        let kindRow = MedicalCardRow(key: "Kind", value:  dcontact.Kind)
-        cardRows.append(kindRow)
-        
-    }
+
     
     
     
