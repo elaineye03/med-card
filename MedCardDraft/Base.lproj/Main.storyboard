@@ -701,9 +701,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" id="EeZ-Ba-2y2">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vh7-x9-ymv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="20.333333333333332"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Emergency description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIV-Jq-DgU">
+                                            <rect key="frame" x="0.0" y="0.0" width="176.33333333333334" height="20.333333333333332"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfM-jv-aJv">
+                                            <rect key="frame" x="186.33333333333337" y="0.0" width="227.66666666666663" height="20.333333333333332"/>
+                                        </pickerView>
+                                    </subviews>
+                                    <rect key="contentStretch" x="0.25" y="0.29999999999999999" width="1" height="1"/>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="48b-jl-oYI">
+                                    <rect key="frame" x="0.0" y="20.333333333333329" width="414" height="23.666666666666671"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Have you called/texted 911?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8e3-1W-KpJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="23.666666666666668"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQI-nD-O3r">
+                                            <rect key="frame" x="365" y="0.0" width="51" height="23.666666666666668"/>
+                                        </switch>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="48b-jl-oYI" firstAttribute="top" secondItem="vh7-x9-ymv" secondAttribute="bottom" constant="20" id="IWL-vR-D4P"/>
+                                <constraint firstAttribute="bottom" secondItem="48b-jl-oYI" secondAttribute="bottom" constant="20" id="yEt-pg-yTy"/>
+                            </constraints>
+                        </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactRowCell" id="vgA-6x-225" userLabel="MedicalCardRowCell" customClass="MedicalCardRowCell" customModule="MedCardDraft" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vgA-6x-225" id="GbV-bT-y3K">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
@@ -719,6 +759,7 @@
                     <navigationItem key="navigationItem" title="Emergency Contact" id="fcl-Od-f4J">
                         <barButtonItem key="backBarButtonItem" title="Back" id="U8d-pR-1sy"/>
                     </navigationItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="414" height="400"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YF-jc-Jie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

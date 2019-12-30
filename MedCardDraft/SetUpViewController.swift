@@ -105,16 +105,22 @@ class SetUpViewController: UITableViewController {
       return cell
     }
     
+    func updateTextField(index: Int, text: String){
+        switch index {
+        case 1:
+            MedicalCard.shared.Person!.Name = text
+        case 2:
+            MedicalCard.shared.Person!.DOB = text
+        default:
+            print("no matching")
+        }
+        
+    }
+    
     @IBOutlet weak var editOutlet: UIButton!
     @IBOutlet weak var addContactOutlet: UIButton!
     @IBOutlet weak var saveOutlet: UIButton!
     @IBAction func saveButton(_ sender: UIButton) {
-        
-        let updatedPersonNameRow = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Person!.Name = updatedPersonNameRow.valueTextField.text!
-        
-        let updatedPersonDOBRow = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Person!.DOB = updatedPersonDOBRow.valueTextField.text!
         
         let updatedPersonGenderRow = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as! MedicalCardRowCell
         MedicalCard.shared.Person!.Gender = updatedPersonGenderRow.valueTextField.text!
