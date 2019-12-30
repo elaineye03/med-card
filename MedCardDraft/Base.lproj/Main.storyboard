@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nQP-8M-d6n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nQP-8M-d6n">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -248,43 +248,111 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PQ-zr-irE">
-                                <rect key="frame" x="177" y="254" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Text 911"/>
-                                <connections>
-                                    <segue destination="oOi-EP-nae" kind="show" id="XBe-e8-6Qr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-KN-JFM">
-                                <rect key="frame" x="123" y="319" width="169" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Text Emergency Contact"/>
-                                <connections>
-                                    <segue destination="ucs-Yl-F3J" kind="show" id="Kw3-ZL-f5B"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93j-5U-jGd">
-                                <rect key="frame" x="153" y="381" width="108" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Medical Card"/>
-                                <connections>
-                                    <segue destination="cql-1b-gB9" kind="show" id="1ld-RX-bfo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfd-Ty-nNj">
-                                <rect key="frame" x="177" y="185" width="53" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Call 911"/>
-                                <connections>
-                                    <action selector="call911:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AGk-Si-pwT"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-ed-uru">
+                                <rect key="frame" x="10" y="54" width="394" height="672"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17D-db-RmL">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="335"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="I10-Cf-dCt">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="335"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfd-Ty-nNj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="335"/>
+                                                        <color key="backgroundColor" red="0.80108612775802612" green="0.0" blue="0.40172499418258667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="Call 911">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="call911:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AGk-Si-pwT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PQ-zr-irE">
+                                                        <rect key="frame" x="197" y="0.0" width="197" height="335"/>
+                                                        <color key="backgroundColor" red="1" green="0.39896509051322937" blue="0.39801329374313354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="Text 911">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="oOi-EP-nae" kind="show" id="XBe-e8-6Qr"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="I10-Cf-dCt" firstAttribute="leading" secondItem="17D-db-RmL" secondAttribute="leading" id="KX6-96-MWS"/>
+                                            <constraint firstItem="I10-Cf-dCt" firstAttribute="centerX" secondItem="17D-db-RmL" secondAttribute="centerX" id="UsV-iB-GeE"/>
+                                            <constraint firstItem="I10-Cf-dCt" firstAttribute="centerY" secondItem="17D-db-RmL" secondAttribute="centerY" id="Xb0-fK-pzh"/>
+                                            <constraint firstAttribute="trailing" secondItem="I10-Cf-dCt" secondAttribute="trailing" id="dcf-Es-Q1I"/>
+                                            <constraint firstAttribute="bottom" secondItem="I10-Cf-dCt" secondAttribute="bottom" id="sPT-gI-AfC"/>
+                                            <constraint firstItem="I10-Cf-dCt" firstAttribute="top" secondItem="17D-db-RmL" secondAttribute="top" id="zSr-JZ-4ry"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNY-g9-A61">
+                                        <rect key="frame" x="0.0" y="337" width="394" height="335"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J4i-Ut-A1N">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="335"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93j-5U-jGd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="335"/>
+                                                        <color key="backgroundColor" red="0.39857536554336548" green="0.8012123703956604" blue="0.7990298867225647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="Medical Card">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="cql-1b-gB9" kind="show" id="1ld-RX-bfo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-KN-JFM">
+                                                        <rect key="frame" x="197" y="0.0" width="197" height="335"/>
+                                                        <color key="backgroundColor" red="1" green="0.80144375562667847" blue="0.004643389955163002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Text Contacts">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="ucs-Yl-F3J" kind="show" id="Kw3-ZL-f5B"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="J4i-Ut-A1N" secondAttribute="trailing" id="8xK-jO-Ex6"/>
+                                            <constraint firstAttribute="bottom" secondItem="J4i-Ut-A1N" secondAttribute="bottom" id="97T-qw-1cP"/>
+                                            <constraint firstItem="J4i-Ut-A1N" firstAttribute="centerX" secondItem="CNY-g9-A61" secondAttribute="centerX" id="IH8-xR-j8Y"/>
+                                            <constraint firstItem="J4i-Ut-A1N" firstAttribute="leading" secondItem="CNY-g9-A61" secondAttribute="leading" id="etf-GJ-aHQ"/>
+                                            <constraint firstItem="J4i-Ut-A1N" firstAttribute="top" secondItem="CNY-g9-A61" secondAttribute="top" id="q7K-Le-dPR"/>
+                                            <constraint firstItem="J4i-Ut-A1N" firstAttribute="centerY" secondItem="CNY-g9-A61" secondAttribute="centerY" id="uST-DI-I4E"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JhD-ed-uru" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Ete-B1-Vxc"/>
+                            <constraint firstItem="JhD-ed-uru" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Ri6-2s-OZR"/>
+                            <constraint firstAttribute="bottom" secondItem="JhD-ed-uru" secondAttribute="bottom" constant="10" id="UAG-1W-lRA"/>
+                            <constraint firstAttribute="trailing" secondItem="JhD-ed-uru" secondAttribute="trailing" constant="10" id="shP-iV-ewo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Srk-fp-ani"/>
+                    <connections>
+                        <outlet property="call911Outlet" destination="Sfd-Ty-nNj" id="ruP-7Q-dFc"/>
+                        <outlet property="medicalOutlet" destination="93j-5U-jGd" id="El0-K5-LiX"/>
+                        <outlet property="text911Outlet" destination="8PQ-zr-irE" id="IAA-Y5-jcb"/>
+                        <outlet property="textContact" destination="gwe-KN-JFM" id="aqh-ha-PmL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,9 +408,6 @@
                                             <rect key="frame" x="129.33333333333334" y="5" width="264.66666666666663" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <action selector="editingDIdEnd:" destination="cql-1b-gB9" eventType="editingDidEnd" id="o1x-qL-wew"/>
-                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -372,7 +437,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Save"/>
                                     <connections>
-                                        <action selector="saveButton:" destination="cql-1b-gB9" eventType="touchUpInside" id="NED-rD-WWV"/>
+                                        <action selector="saveButton:" destination="cql-1b-gB9" eventType="touchUpInside" id="MFu-lg-9qn"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -402,7 +467,7 @@
                         <outlet property="addContactOutlet" destination="IFQ-ft-99f" id="8Mj-Gg-1YH"/>
                         <outlet property="editOutlet" destination="bFI-eH-gM9" id="oIQ-qf-12n"/>
                         <outlet property="refreshOutlet" destination="wOD-cW-XRM" id="vUm-IE-Z7V"/>
-                        <outlet property="saveOutlet" destination="RCZ-jg-42f" id="YId-kR-fRk"/>
+                        <outlet property="saveOutlet" destination="RCZ-jg-42f" id="uGE-ZV-D1c"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD6-ir-MQU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

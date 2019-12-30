@@ -87,21 +87,7 @@ extension MedicalCardRow {
     let pRow = MedicalCardRow(key: "InsuredName", value:  MedicalCard.shared.Medinfo!.Insurance["InsuredName"]!)
     cardRows.append(pRow)
     
-    let titleEmergency = MedicalCardRow(key: "Contacts", value:  "(TITLE)")
-    cardRows.append(titleEmergency)
     
-    for (numcontact, contact) in MedicalCard.shared.eContact {
-        
-        let nameRow = MedicalCardRow(key: "Name", value:  contact.Name)
-        cardRows.append(nameRow)
-        let phoneRow = MedicalCardRow(key: "Phone", value:  contact.Phone)
-        cardRows.append(phoneRow)
-        let emailRow = MedicalCardRow(key: "Email", value:  contact.Email)
-        cardRows.append(emailRow)
-        let relationRow = MedicalCardRow(key: "Relationship", value:  contact.Relation)
-        cardRows.append(relationRow)
-        
-    }
     
     let titleDoc = MedicalCardRow(key: "Doctor Contact", value:  "(TITLE)")
     cardRows.append(titleDoc)
@@ -117,7 +103,21 @@ extension MedicalCardRow {
     cardRows.append(kindRow)
         
 
+    let titleEmergency = MedicalCardRow(key: "Contacts", value:  "(TITLE)")
+    cardRows.append(titleEmergency)
     
+    for (numcontact, contact) in MedicalCard.shared.eContact {
+        
+        let nameRow = MedicalCardRow(key: "Name", value:  contact.Name)
+        cardRows.append(nameRow)
+        let phoneRow = MedicalCardRow(key: "Phone", value:  contact.Phone)
+        cardRows.append(phoneRow)
+        let emailRow = MedicalCardRow(key: "Email", value:  contact.Email)
+        cardRows.append(emailRow)
+        let relationRow = MedicalCardRow(key: "Relationship", value:  contact.Relation)
+        cardRows.append(relationRow)
+        
+    }
     
     
     return cardRows

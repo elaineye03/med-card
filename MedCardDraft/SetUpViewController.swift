@@ -40,6 +40,8 @@ class SetUpViewController: UITableViewController {
        //refresh screen
        self.tableView.reloadData()
        // need to remove it from MedicalCard object too
+        
+        
        updateEContactsIndex(pos: indexPath.row)
    }
     
@@ -59,8 +61,9 @@ class SetUpViewController: UITableViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        print(textField.text!)
-        print(textField.accessibilityIdentifier!)
+        
+        updateTextField(index: Int(textField.accessibilityIdentifier!)!, text: textField.text!)
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,6 +114,60 @@ class SetUpViewController: UITableViewController {
             MedicalCard.shared.Person!.Name = text
         case 2:
             MedicalCard.shared.Person!.DOB = text
+        case 3:
+            MedicalCard.shared.Person!.Gender = text
+        case 4:
+            MedicalCard.shared.Person!.Address = text
+        case 5:
+            MedicalCard.shared.Person!.Phone = text
+        case 6:
+            MedicalCard.shared.Person!.Email = text
+        case 7:
+            MedicalCard.shared.Person!.SSN = text
+        case 9:
+            MedicalCard.shared.Medinfo!.Allergy = text
+        case 10:
+            MedicalCard.shared.Medinfo!.Medication = text
+        case 11:
+            MedicalCard.shared.Medinfo!.Condition = text
+        case 12:
+            MedicalCard.shared.Medinfo!.BloodType = text
+        case 14:
+             MedicalCard.shared.Medinfo!.Insurance["provider"] = text
+        case 15:
+            MedicalCard.shared.Medinfo!.Insurance["group"] = text
+        case 16:
+            MedicalCard.shared.Medinfo!.Insurance["policy"] = text
+        case 17:
+            MedicalCard.shared.Medinfo!.Insurance["InsuredName"] = text
+        case 19:
+            MedicalCard.shared.dContact!.Name = text
+        case 20:
+            MedicalCard.shared.dContact!.Phone = text
+        case 21:
+            MedicalCard.shared.dContact!.Email = text
+        case 22:
+            MedicalCard.shared.dContact!.Phone = text
+        case 23...tableView.numberOfRows(inSection: 0):
+            let i = (index-23) / 4
+            let r = (index-23) % 4
+            if (r == 1)
+            {
+                MedicalCard.shared.eContact[String(i)]?.Name = text
+            }
+            else if(r == 2)
+            {
+                MedicalCard.shared.eContact[String(i)]?.Phone = text
+            }
+            else if(r == 3)
+            {
+                MedicalCard.shared.eContact[String(i)]?.Email = text
+            }
+            else if (r == 4)
+            {
+                MedicalCard.shared.eContact[String(i)]?.Relation = text
+            }
+            
         default:
             print("no matching")
         }
@@ -121,88 +178,48 @@ class SetUpViewController: UITableViewController {
     @IBOutlet weak var addContactOutlet: UIButton!
     @IBOutlet weak var saveOutlet: UIButton!
     @IBAction func saveButton(_ sender: UIButton) {
+        saveOutlet.isHidden = true
+        refreshOutlet.isHidden = true
+        editOutlet.isHidden = false
+        addContactOutlet.isHidden = true
         
-        let updatedPersonGenderRow = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Person!.Gender = updatedPersonGenderRow.valueTextField.text!
-
-        let updatedPersonAddressRow = tableView.cellForRow(at: IndexPath(row: 4, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Person!.Address = updatedPersonAddressRow.valueTextField.text!
-
-        let updatedPersonPhoneRow = tableView.cellForRow(at: IndexPath(row: 5, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Person!.Phone = updatedPersonPhoneRow.valueTextField.text!
-
-        let updatedPersonEmailRow = tableView.cellForRow(at: IndexPath(row: 6, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Person!.Email = updatedPersonEmailRow.valueTextField.text!
-
-        let updatedPersonSSNRow = tableView.cellForRow(at: IndexPath(row: 7, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Person!.SSN = updatedPersonSSNRow.valueTextField.text!
-
-        let updatedAllergyRow = tableView.cellForRow(at: IndexPath(row: 9, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Medinfo!.Allergy = updatedAllergyRow.valueTextField.text!
-
-        let updatedMedicationRow = tableView.cellForRow(at: IndexPath(row: 10, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Medinfo!.Medication = updatedMedicationRow.valueTextField.text!
-
-        let updatedConditionRow = tableView.cellForRow(at: IndexPath(row: 11, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Medinfo!.Condition = updatedConditionRow.valueTextField.text!
-
-        let updatedBloodTypeRow = tableView.cellForRow(at: IndexPath(row: 12, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Medinfo!.BloodType = updatedBloodTypeRow.valueTextField.text!
-
-        let updatedProviderRow = tableView.cellForRow(at: IndexPath(row: 14, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Medinfo!.Insurance["provider"] = updatedProviderRow.valueTextField.text!
-
-        let updatedGroupRow = tableView.cellForRow(at: IndexPath(row: 15, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Medinfo!.Insurance["group"] = updatedGroupRow.valueTextField.text!
-        
-        let updatedPolicyRow = tableView.cellForRow(at: IndexPath(row: 16, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Medinfo!.Insurance["policy"] = updatedPolicyRow.valueTextField.text!
-        
-        let updatedInsuredNameRow = tableView.cellForRow(at: IndexPath(row: 17, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.Medinfo!.Insurance["InsuredName"] = updatedInsuredNameRow.valueTextField.text!
-        var count = 19
-        var contactnum = 0
-        for index in 19...self.tableView.numberOfRows(inSection: 0) - 1 {
-            let updatedRow = self.tableView.cellForRow(at: IndexPath(row: count, section: 0)) as! MedicalCardRowCell
-            if (updatedRow.textLabel!.isHidden)
-            {
-                break
-            }
-            else
-            {
-                MedicalCard.shared.eContact[String(contactnum)]?.Name = updatedRow.valueTextField.text!
-                count +=  1
-                let updatedPhoneRow = self.tableView.cellForRow(at: IndexPath(row: count, section: 0)) as! MedicalCardRowCell
-                MedicalCard.shared.eContact[String(contactnum)]?.Phone = updatedPhoneRow.valueTextField.text!
-                count +=  1
-                let updatedEmailRow = self.tableView.cellForRow(at: IndexPath(row: count, section: 0)) as! MedicalCardRowCell
-                MedicalCard.shared.eContact[String(contactnum)]?.Email = updatedEmailRow.valueTextField.text!
-                count +=  1
-                let updatedRelationRow = self.tableView.cellForRow(at: IndexPath(row: count, section: 0)) as! MedicalCardRowCell
-                MedicalCard.shared.eContact[String(contactnum)]?.Relation = updatedRelationRow.valueTextField.text!
-                count +=  1
-
-                contactnum += 1
-            }
+        let encoder = PropertyListEncoder()
+                encoder.outputFormat = .xml
+                
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("medicalcard.plist")
+                print(path.absoluteString)
+        // adding personal info
+        do {
+            let data = try encoder.encode(MedicalCard.shared.Person)
+            try data.write(to: path)
+        } catch {
+            print(error)
+            print ( " error from writing into")
         }
-        count += 1
-        let updatedDoctorNameRow = self.tableView.cellForRow(at: IndexPath(row: count, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.dContact!.Name = updatedDoctorNameRow.valueTextField.text!
-        count += 1
-        let updatedDoctorPhoneRow = self.tableView.cellForRow(at: IndexPath(row: count, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.dContact!.Phone = updatedDoctorPhoneRow.valueTextField.text!
-        count += 1
-        let updatedDoctorEmailRow = self.tableView.cellForRow(at: IndexPath(row: count, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.dContact!.Email = updatedDoctorEmailRow.valueTextField.text!
-        count += 1
-        let updatedDoctorKindRow = self.tableView.cellForRow(at: IndexPath(row: count, section: 0)) as! MedicalCardRowCell
-        MedicalCard.shared.dContact!.Phone = updatedDoctorKindRow.valueTextField.text!
-
-//        return rowCount
-//        let updatedInsuredNameRow = tableView.cellForRow(at: IndexPath(row: 19, section: 0)) as! MedicalCardRowCell
         
-        //print(updatedMedicalRow.valueTextField.text!)
-        //cell.valueTextField.isEnabled = enableEdit
+        do {
+            let data = try encoder.encode(MedicalCard.shared.Medinfo)
+            try data.write(to: path)
+        } catch {
+            print(error)
+            print ( " error from writing into")
+        }
+                
+        do {
+            let data = try encoder.encode(MedicalCard.shared.eContact)
+            try data.write(to: path)
+        } catch {
+            print(error)
+            print ( " error from writing into")
+        }
+        
+        do {
+            let data = try encoder.encode(MedicalCard.shared.dContact)
+            try data.write(to: path)
+        } catch {
+            print(error)
+            print ( " error from writing into")
+        }
         
     }
     

@@ -50,8 +50,19 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         print(card)
         
         MedicalCard.shared = card
+        
+        call911Outlet.layer.cornerRadius = 4
+        text911Outlet.layer.cornerRadius = 4
+        medicalOutlet.layer.cornerRadius = 4
+        textContact.layer.cornerRadius = 4
+        
+        text911Outlet.titleLabel?.font = .systemFont(ofSize: 25)
     }
 
     
+    @IBOutlet weak var text911Outlet: UIButton!
+    @IBOutlet weak var medicalOutlet: UIButton!
+    @IBOutlet weak var textContact: UIButton!
+    @IBOutlet weak var call911Outlet: UIButton!
 }
 
