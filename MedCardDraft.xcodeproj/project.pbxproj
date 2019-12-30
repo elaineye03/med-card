@@ -27,6 +27,7 @@
 		B934ABA223B9456F00C10710 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA123B9456F00C10710 /* SetUpViewController.swift */; };
 		B934ABA423B9579400C10710 /* MedicalCardRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA323B9579400C10710 /* MedicalCardRowCell.swift */; };
 		B934ABA623B957CE00C10710 /* MedicalCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA523B957CE00C10710 /* MedicalCardRow.swift */; };
+		B934ABA823B9785F00C10710 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA723B9785F00C10710 /* AddContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		B934ABA123B9456F00C10710 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		B934ABA323B9579400C10710 /* MedicalCardRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCardRowCell.swift; sourceTree = "<group>"; };
 		B934ABA523B957CE00C10710 /* MedicalCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCardRow.swift; sourceTree = "<group>"; };
+		B934ABA723B9785F00C10710 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				B934AB8B23B7D70600C10710 /* MedicalCardViewController.swift */,
 				B934AB9923B7F33800C10710 /* Text911ViewController.swift */,
 				B934AB7D23B7D5F700C10710 /* Main.storyboard */,
+				B934ABA723B9785F00C10710 /* AddContactViewController.swift */,
 				B934ABA323B9579400C10710 /* MedicalCardRowCell.swift */,
 				B934ABA523B957CE00C10710 /* MedicalCardRow.swift */,
 				B934ABA123B9456F00C10710 /* SetUpViewController.swift */,
@@ -183,6 +186,7 @@
 				B934AB7C23B7D5F700C10710 /* ViewController.swift in Sources */,
 				B934AB9A23B7F33800C10710 /* Text911ViewController.swift in Sources */,
 				B934AB7823B7D5F700C10710 /* AppDelegate.swift in Sources */,
+				B934ABA823B9785F00C10710 /* AddContactViewController.swift in Sources */,
 				B934ABA023B878DB00C10710 /* prgrmViewController.swift in Sources */,
 				B934AB9623B7DEAE00C10710 /* EmergencyContact.swift in Sources */,
 				B934AB8C23B7D70600C10710 /* MedicalCardViewController.swift in Sources */,

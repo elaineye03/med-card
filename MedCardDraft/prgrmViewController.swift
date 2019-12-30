@@ -66,7 +66,7 @@ class prgrmViewController: UIViewController {
         
         addBigLabels(labelName: "Emergency Contact")
         for (numcontact, contact) in MedicalCard.shared.eContact {
-            addBigLabels(labelName: String(numcontact))
+            
             addLabels(labelName: "Name", labelValue: contact.Name)
             addLabels(labelName: "Phone", labelValue: contact.Phone)
             addLabels(labelName: "Email", labelValue: contact.Email)

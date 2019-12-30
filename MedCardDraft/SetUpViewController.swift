@@ -16,7 +16,7 @@ class SetUpViewController: UITableViewController {
     override func awakeFromNib() {
       super.awakeFromNib()
       
-      medicalRows = MedicalCardRow.defaultRows
+      medicalRows = MedicalCardRow.loadCardRowsFromPlist("mid")
         
     }
     
@@ -38,6 +38,7 @@ class SetUpViewController: UITableViewController {
         {
             cell.valueTextField.text = medicalRow.value
             cell.valueTextField.isEnabled = false
+            cell.valueTextField.isHidden = false
         }
       
         
@@ -48,8 +49,16 @@ class SetUpViewController: UITableViewController {
       return cell
     }
     
+    @IBAction func refreshButton(_ sender: UIButton) {
+//        self.tableView.currentIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        medicalRows = MedicalCardRow.loadCardRowsFromPlist("mid")
+        self.tableView.reloadData()
+    }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+       // medicalRows = MedicalCardRow.loadCardRowsFromPlist("mid")
+        
 
         
 //        let label = UILabel(frame: CGRect(x:0, y:0, width: 200, height:21))
