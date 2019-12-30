@@ -15,6 +15,8 @@ class SetUpViewController: UITableViewController {
      var eContactsIndex: [Int] = []
      var isContactSection:Bool = false
     
+    var maxLoadedRow: Int = 0
+    
     override func awakeFromNib() {
       super.awakeFromNib()
       
@@ -55,6 +57,11 @@ class SetUpViewController: UITableViewController {
         }
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        print(textField.text!)
+        print(textField.accessibilityIdentifier!)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return medicalRows.count
     }
@@ -83,8 +90,11 @@ class SetUpViewController: UITableViewController {
             if (isContactSection == true && medicalRow.key == "Name") {
                 eContactsIndex.append(indexPath.row)
             }
+            
+            cell.valueTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+            cell.valueTextField.accessibilityIdentifier = String(indexPath.row)
         }
-        
+   
         
     
      //   cell.thumbnailImageView.image = UIImage(named: vacationSpot.thumbnailName)
@@ -147,6 +157,8 @@ class SetUpViewController: UITableViewController {
         
         //print(updatedMedicalRow.valueTextField.text!)
     }
+    
+    
     @IBAction func editButton(_ sender: UIButton) {
         enableEdit = true
          self.tableView.reloadData()
