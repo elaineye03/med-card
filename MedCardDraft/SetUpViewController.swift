@@ -31,6 +31,8 @@ class SetUpViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, commit style: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        var i = (indexPath.row-23)/4
+        MedicalCard.shared.eContact[String(i-1)] = nil
        medicalRows.remove(at: indexPath.row)
        medicalRows.remove(at: indexPath.row)
        medicalRows.remove(at: indexPath.row)
