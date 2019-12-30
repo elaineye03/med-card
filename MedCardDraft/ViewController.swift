@@ -39,7 +39,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         
         let doctor = DrContact(Kind: "Physician", Name: "Primrose Everdeen", Phone: "294-859-6078", Email: "primrose@disctrict12.com")
         
-        let emergecontact = EmergencyContact(Name: "Harry Potter", Phone:"123-900-3333", Email: "harrypotter@hogwarts.com", Relation:"Friend")
+        let emergecontact = EmergencyContact(Name: "Harry Potter", Phone:"408-728-8046", Email: "harrypotter@hogwarts.com", Relation:"Friend")
         let emergecontact2 = EmergencyContact(Name: "Annabeth Chase", Phone:"906-278-5928", Email: "annabethchase@halfbloodcamp.com", Relation:"Friend")
         let edict = ["0": emergecontact, "1": emergecontact2]
         let locat = Location(x: "0.0", y: "0.0")
