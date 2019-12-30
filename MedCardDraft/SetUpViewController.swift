@@ -11,7 +11,7 @@ import UIKit
 class SetUpViewController: UITableViewController {
     
      var medicalRows: [MedicalCardRow] = []
-    
+     var enableEdit = false
     
     override func awakeFromNib() {
       super.awakeFromNib()
@@ -37,10 +37,10 @@ class SetUpViewController: UITableViewController {
         else
         {
             cell.valueTextField.text = medicalRow.value
-            cell.valueTextField.isEnabled = false
+            cell.valueTextField.isEnabled = enableEdit
             cell.valueTextField.isHidden = false
         }
-      
+        
         
     
      //   cell.thumbnailImageView.image = UIImage(named: vacationSpot.thumbnailName)
@@ -49,6 +49,71 @@ class SetUpViewController: UITableViewController {
       return cell
     }
     
+    @IBOutlet weak var editOutlet: UIButton!
+    @IBOutlet weak var addContactOutlet: UIButton!
+    @IBOutlet weak var saveOutlet: UIButton!
+    @IBAction func saveButton(_ sender: UIButton) {
+        let updatedPersonNameRow = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Person!.Name = updatedPersonNameRow.valueTextField.text!
+        
+        let updatedPersonDOBRow = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Person!.DOB = updatedPersonDOBRow.valueTextField.text!
+        
+        let updatedPersonGenderRow = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Person!.Gender = updatedPersonGenderRow.valueTextField.text!
+        
+        let updatedPersonAddressRow = tableView.cellForRow(at: IndexPath(row: 4, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Person!.Address = updatedPersonAddressRow.valueTextField.text!
+        
+        let updatedPersonPhoneRow = tableView.cellForRow(at: IndexPath(row: 5, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Person!.Phone = updatedPersonPhoneRow.valueTextField.text!
+        
+        let updatedPersonEmailRow = tableView.cellForRow(at: IndexPath(row: 6, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Person!.Email = updatedPersonEmailRow.valueTextField.text!
+        
+        let updatedPersonSSNRow = tableView.cellForRow(at: IndexPath(row: 7, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Person!.SSN = updatedPersonSSNRow.valueTextField.text!
+        
+        let updatedAllergyRow = tableView.cellForRow(at: IndexPath(row: 9, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Medinfo!.Allergy = updatedAllergyRow.valueTextField.text!
+        
+        let updatedMedicationRow = tableView.cellForRow(at: IndexPath(row: 10, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Medinfo!.Medication = updatedMedicationRow.valueTextField.text!
+        
+        let updatedConditionRow = tableView.cellForRow(at: IndexPath(row: 11, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Medinfo!.Condition = updatedConditionRow.valueTextField.text!
+        
+        let updatedBloodTypeRow = tableView.cellForRow(at: IndexPath(row: 12, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Medinfo!.BloodType = updatedBloodTypeRow.valueTextField.text!
+        
+        let updatedProviderRow = tableView.cellForRow(at: IndexPath(row: 14, section: 0)) as! MedicalCardRowCell
+        print(updatedBloodTypeRow.valueTextField.text!)
+        MedicalCard.shared.Medinfo!.Insurance["provider"] = updatedBloodTypeRow.valueTextField.text!
+        
+        let updatedGroupRow = tableView.cellForRow(at: IndexPath(row: 15, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Medinfo!.Insurance["group"] = updatedGroupRow.valueTextField.text!
+        
+        let updatedPolicyRow = tableView.cellForRow(at: IndexPath(row: 16, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Medinfo!.Insurance["policy"] = updatedPolicyRow.valueTextField.text!
+        
+        let updatedInsuredNameRow = tableView.cellForRow(at: IndexPath(row: 17, section: 0)) as! MedicalCardRowCell
+        MedicalCard.shared.Medinfo!.Insurance["InsuredName"] = updatedInsuredNameRow.valueTextField.text!
+        
+        
+        
+        //print(updatedMedicalRow.valueTextField.text!)
+    }
+    @IBAction func editButton(_ sender: UIButton) {
+        enableEdit = true
+         self.tableView.reloadData()
+        
+        saveOutlet.isHidden = false
+        refreshOutlet.isHidden = false
+        addContactOutlet.isHidden = false
+        editOutlet.isHidden = true
+        
+    }
+    @IBOutlet weak var refreshOutlet: UIButton!
     @IBAction func refreshButton(_ sender: UIButton) {
 //        self.tableView.currentIndexPath = NSIndexPath(forRow: 0, inSection: 0)
         medicalRows = MedicalCardRow.loadCardRowsFromPlist("mid")
@@ -57,6 +122,11 @@ class SetUpViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        saveOutlet.isHidden = true
+        refreshOutlet.isHidden = true
+        addContactOutlet.isHidden = true
+        
+        
        // medicalRows = MedicalCardRow.loadCardRowsFromPlist("mid")
         
 

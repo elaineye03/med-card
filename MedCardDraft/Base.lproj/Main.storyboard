@@ -363,11 +363,24 @@
                                     <rect key="frame" x="302" y="7" width="92" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Save"/>
+                                    <connections>
+                                        <action selector="saveButton:" destination="cql-1b-gB9" eventType="touchUpInside" id="NED-rD-WWV"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="Vab-Qj-4gk">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bFI-eH-gM9">
+                                    <rect key="frame" x="202" y="7" width="92" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Edit"/>
+                                    <connections>
+                                        <action selector="editButton:" destination="cql-1b-gB9" eventType="touchUpInside" id="Q2C-KX-7Ph"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem style="plain" id="ice-VP-1c5">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wOD-cW-XRM">
-                                    <rect key="frame" x="202" y="7" width="92" height="30"/>
+                                    <rect key="frame" x="102" y="7" width="92" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Refresh"/>
                                     <connections>
@@ -377,6 +390,12 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addContactOutlet" destination="IFQ-ft-99f" id="8Mj-Gg-1YH"/>
+                        <outlet property="editOutlet" destination="bFI-eH-gM9" id="oIQ-qf-12n"/>
+                        <outlet property="refreshOutlet" destination="wOD-cW-XRM" id="vUm-IE-Z7V"/>
+                        <outlet property="saveOutlet" destination="RCZ-jg-42f" id="YId-kR-fRk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD6-ir-MQU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
