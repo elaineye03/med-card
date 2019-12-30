@@ -29,7 +29,6 @@ class SetUpViewController: UITableViewController {
         return eContactsIndex.contains(indexPath.row)
     }
 
-
     override func tableView(_ tableView: UITableView, commit style: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         var i = (indexPath.row-23)/4
         MedicalCard.shared.eContact[String(i-1)] = nil
@@ -39,7 +38,6 @@ class SetUpViewController: UITableViewController {
        medicalRows.remove(at: indexPath.row)
     
        // need to update eContactsIndex too
-       //refresh screen
        self.tableView.reloadData()
        // need to remove it from MedicalCard object too
         
@@ -63,17 +61,18 @@ class SetUpViewController: UITableViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-
-        
         updateTextField(index: Int(textField.accessibilityIdentifier!)!, text: textField.text!)
-        
-
-
         //updateTextField(index: (textField.accessibilityIdentifier! as NSString).integerValue, text: textField.text!)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return medicalRows.count
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        medicalRows = MedicalCardRow.loadCardRows()
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -182,7 +181,7 @@ class SetUpViewController: UITableViewController {
     @IBOutlet weak var saveOutlet: UIButton!
     @IBAction func saveButton(_ sender: UIButton) {
         saveOutlet.isHidden = true
-        refreshOutlet.isHidden = true
+        
         editOutlet.isHidden = false
         addContactOutlet.isHidden = true
         
@@ -228,7 +227,7 @@ class SetUpViewController: UITableViewController {
         
         enableEdit = false
         saveOutlet.isHidden = true
-        refreshOutlet.isHidden = true
+        
         addContactOutlet.isHidden = false
         editOutlet.isHidden = false
 
@@ -243,7 +242,7 @@ class SetUpViewController: UITableViewController {
          self.tableView.reloadData()
         
         saveOutlet.isHidden = false
-        refreshOutlet.isHidden = false
+        
         addContactOutlet.isHidden = true
         editOutlet.isHidden = true
         
@@ -263,22 +262,15 @@ class SetUpViewController: UITableViewController {
        }
     }
     
-    @IBOutlet weak var refreshOutlet: UIButton!
-    @IBAction func refreshButton(_ sender: UIButton) {
-
-        medicalRows = MedicalCardRow.loadCardRows()
-        self.tableView.reloadData()
-    }
-    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         saveOutlet.isHidden = true
-        refreshOutlet.isHidden = true
+        
         addContactOutlet.isHidden = false
         
-        print("it load the page ....")
+        
     }
 
     
