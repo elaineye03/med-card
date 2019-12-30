@@ -23,7 +23,7 @@ class TextContactsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "ContactRowCell", for: indexPath)
          
-       // cell.textLabel!.text = eContactsRows[indexPath.row]
+        cell.textLabel!.text = eContactsRows[indexPath.row]
         
          return cell
     }
