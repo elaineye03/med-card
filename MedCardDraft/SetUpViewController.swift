@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  card-storage
 //
-//  Created by Stanley Ye on 12/26/19.
-//  Copyright © 2019 Stanley Ye. All rights reserved.
+//  Created by Elaine Ye on 12/26/19.
+//  Copyright © 2019 Elaine Ye. All rights reserved.
 //
 
 import UIKit
@@ -20,7 +20,7 @@ class SetUpViewController: UITableViewController {
     override func awakeFromNib() {
       super.awakeFromNib()
       
-      medicalRows = MedicalCardRow.loadCardRowsFromPlist("mid")
+      medicalRows = MedicalCardRow.loadCardRows()
         
     }
     
@@ -61,9 +61,13 @@ class SetUpViewController: UITableViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+
         
         updateTextField(index: Int(textField.accessibilityIdentifier!)!, text: textField.text!)
         
+
+
+        //updateTextField(index: (textField.accessibilityIdentifier! as NSString).integerValue, text: textField.text!)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -100,15 +104,12 @@ class SetUpViewController: UITableViewController {
             cell.valueTextField.accessibilityIdentifier = String(indexPath.row)
         }
    
-        
-    
      //   cell.thumbnailImageView.image = UIImage(named: vacationSpot.thumbnailName)
-        
       
       return cell
     }
     
-    func updateTextField(index: Int, text: String){
+    func updateTextField(index: Int, text: String) {
         switch index {
         case 1:
             MedicalCard.shared.Person!.Name = text
@@ -171,7 +172,7 @@ class SetUpViewController: UITableViewController {
         default:
             print("no matching")
         }
-        
+    
     }
     
     @IBOutlet weak var editOutlet: UIButton!
@@ -183,44 +184,55 @@ class SetUpViewController: UITableViewController {
         editOutlet.isHidden = false
         addContactOutlet.isHidden = true
         
-        let encoder = PropertyListEncoder()
-                encoder.outputFormat = .xml
-                
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("medicalcard.plist")
-                print(path.absoluteString)
+//        let encoder = PropertyListEncoder()
+//                encoder.outputFormat = .xml
+//
+//        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("medicalcard.plist")
+//                print(path.absoluteString)
         // adding personal info
-        do {
-            let data = try encoder.encode(MedicalCard.shared.Person)
-            try data.write(to: path)
-        } catch {
-            print(error)
-            print ( " error from writing into")
-        }
+//        do {
+//            let data = try encoder.encode(MedicalCard.shared.Person)
+//            try data.write(to: path)
+//        } catch {
+//            print(error)
+//            print ( " error from writing into")
+//        }
+//
+//        do {
+//            let data = try encoder.encode(MedicalCard.shared.Medinfo)
+//            try data.write(to: path)
+//        } catch {
+//            print(error)
+//            print ( " error from writing into")
+//        }
+//
+//        do {
+//            let data = try encoder.encode(MedicalCard.shared.eContact)
+//            try data.write(to: path)
+//        } catch {
+//            print(error)
+//            print ( " error from writing into")
+//        }
+//
+//        do {
+//            let data = try encoder.encode(MedicalCard.shared.dContact)
+//            try data.write(to: path)
+//        } catch {
+//            print(error)
+//            print ( " error from writing into")
+//        }
+
+        writeMedicalCardToPlist(card: MedicalCard.shared)
         
-        do {
-            let data = try encoder.encode(MedicalCard.shared.Medinfo)
-            try data.write(to: path)
-        } catch {
-            print(error)
-            print ( " error from writing into")
-        }
-                
-        do {
-            let data = try encoder.encode(MedicalCard.shared.eContact)
-            try data.write(to: path)
-        } catch {
-            print(error)
-            print ( " error from writing into")
-        }
+        enableEdit = false
+        saveOutlet.isHidden = true
+        refreshOutlet.isHidden = true
+        addContactOutlet.isHidden = false
+        editOutlet.isHidden = false
+
         
-        do {
-            let data = try encoder.encode(MedicalCard.shared.dContact)
-            try data.write(to: path)
-        } catch {
-            print(error)
-            print ( " error from writing into")
-        }
-        
+        medicalRows = MedicalCardRow.loadCardRows()
+        self.tableView.reloadData()
     }
     
     
@@ -230,96 +242,42 @@ class SetUpViewController: UITableViewController {
         
         saveOutlet.isHidden = false
         refreshOutlet.isHidden = false
-        addContactOutlet.isHidden = false
+        addContactOutlet.isHidden = true
         editOutlet.isHidden = true
         
     }
+    
+    func writeMedicalCardToPlist(card: MedicalCard) {
+       let encoder = PropertyListEncoder()
+       encoder.outputFormat = .xml
+    
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(ViewController.PLIST_FILE_NAME)
+    
+       do {
+           let data = try encoder.encode(card)
+           try data.write(to: path)
+       } catch {
+           print(error)
+       }
+    }
+    
     @IBOutlet weak var refreshOutlet: UIButton!
     @IBAction func refreshButton(_ sender: UIButton) {
-//        self.tableView.currentIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        medicalRows = MedicalCardRow.loadCardRowsFromPlist("mid")
+
+        medicalRows = MedicalCardRow.loadCardRows()
         self.tableView.reloadData()
     }
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         saveOutlet.isHidden = true
         refreshOutlet.isHidden = true
-        addContactOutlet.isHidden = true
+        addContactOutlet.isHidden = false
         
-        
-       // medicalRows = MedicalCardRow.loadCardRowsFromPlist("mid")
-        
-
-        
-//        let label = UILabel(frame: CGRect(x:0, y:0, width: 200, height:21))
-//        label.textAlignment = .center
-//        label.text = "I'm a test label"
-//        label.sizeToFit()
-//        self.view.addSubview(label)
+        print("it load the page ....")
     }
-//          scrollView = UIScrollView(frame: view.bounds)
-//          scrollView.backgroundColor = UIColor.white
-//          scrollView.contentSize = stackView.bounds.size
-//          scrollView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.flexibleWidth.rawValue | UIView.AutoresizingMask.flexibleHeight.rawValue)
-              
-        
-         // by default scrollView.contentOffset = CGPoint(x: 1000, y: 450)
-//        self.view.backgroundColor = UIColor.gray
-        
-//        scrollView.addSubview(stackView)
-//         scrollView.delegate = self.view
-//         scrollView.minimumZoomScale = 0.1
-//         scrollView.maximumZoomScale = 4.0
-//         scrollView.zoomScale = 1.0
-        
-
-    
-//    func addScrollView() {
-////        scrollView = UIScrollView(frame: view.bounds)
-////        stackView = UIStackView()
-//
-//        self.view.backgroundColor = UIColor.gray
-//
-//        self.view.addSubview(self.scrollView)
-//
-//         self.scrollView.translatesAutoresizingMaskIntoConstraints = false;
-//
-//         //Constrain scroll view
-//         self.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true;
-//         self.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true;
-//         self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true;
-//         self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true;
-//
-//
-//         //Add and setup stack view
-//        self.scrollView.addSubview(self.stackView)
-//        self.stackView.translatesAutoresizingMaskIntoConstraints = false
-//        self.stackView.axis = .vertical
-//        self.stackView.spacing = 10;
-//
-//        //constrain stack view to scroll view
-//        self.stackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true;
-//        self.stackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true;
-//        self.stackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true;
-//        self.stackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true;
-//
-//        //constrain width of stack view to width of self.view, NOT scroll view
-//        self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true;
-//
-//
-//         //add image view to stack view
-//         let kittenImageView1 = UIImageView(image: UIImage(named: "kittens1"))
-//         self.stackView.addArrangedSubview(kittenImageView1)
-//
-//
-//        let kittenImageView2 = UIImageView(image: UIImage(named: "kittens2"))
-//        self.stackView.addArrangedSubview(kittenImageView2)
-//
-//        let kittenImageView3 = UIImageView(image: UIImage(named: "kittens3"))
-//        self.stackView.addArrangedSubview(kittenImageView3)
-//    }
-//
 
     
 }

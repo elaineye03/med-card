@@ -2,8 +2,8 @@
 //  MedicalCardRowCell.swift
 //  card-storage
 //
-//  Created by Stanley Ye on 12/29/19.
-//  Copyright © 2019 Stanley Ye. All rights reserved.
+//  Created by Elaine Ye on 12/29/19.
+//  Copyright © 2019 Elaine Ye. All rights reserved.
 //
 
 import UIKit

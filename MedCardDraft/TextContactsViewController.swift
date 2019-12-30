@@ -2,7 +2,7 @@
 //  TextContactsViewController.swift
 //  MedCardDraft
 //
-//  Created by Stanley Ye on 12/29/19.
+//  Created by Ealine Ye on 12/29/19.
 //  Copyright © 2019 Elaine Ye. All rights reserved.
 //
 

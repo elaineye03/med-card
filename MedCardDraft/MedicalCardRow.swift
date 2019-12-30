@@ -2,8 +2,8 @@
 //  MedicalCard.swift
 //  card-storage
 //
-//  Created by Stanley Ye on 12/29/19.
-//  Copyright © 2019 Stanley Ye. All rights reserved.
+//  Created by Elaine Ye on 12/29/19.
+//  Copyright © 2019 Elaine Ye. All rights reserved.
 //
 
 import Foundation
@@ -12,18 +12,16 @@ struct MedicalCardRow {
 
   let key: String
   let value: String
-  //let type:String
+  
   
 }
 
-// MARK: - Support for loading data from plist
-
 extension MedicalCardRow {
   static var defaultRows: [MedicalCardRow] = {
-    return loadCardRowsFromPlist("medicalCard")
+    return loadCardRows()
   }()
   
-  static func loadCardRowsFromPlist(_ plistName: String) -> [MedicalCardRow] {
+  static func loadCardRows() -> [MedicalCardRow] {
 //    guard
 //      let path = Bundle.main.path(forResource: plistName, ofType: "plist"),
 //      let dictArray = NSArray(contentsOfFile: path) as? [[String : AnyObject]]
@@ -101,6 +99,7 @@ extension MedicalCardRow {
     cardRows.append(emailRow)
     let kindRow = MedicalCardRow(key: "Kind", value:  MedicalCard.shared.dContact!.Kind)
     cardRows.append(kindRow)
+
         
 
     let titleEmergency = MedicalCardRow(key: "Contacts", value:  "(TITLE)")
@@ -119,43 +118,8 @@ extension MedicalCardRow {
         
     }
     
+
     
     return cardRows
-//    for dict in dictArray {
-//      guard
-//        let identifier    = dict["identifier"]    as? Int,
-//        let name          = dict["name"]          as? String,
-//        let locationName  = dict["locationName"]  as? String,
-//        let thumbnailName = dict["thumbnailName"] as? String,
-//        let whyVisit      = dict["whyVisit"]      as? String,
-//        let whatToSee     = dict["whatToSee"]     as? String,
-//        let weatherInfo   = dict["weatherInfo"]   as? String,
-//        let userRating    = dict["userRating"]    as? Int,
-//        let wikipediaLink = dict["wikipediaLink"] as? String,
-//        let latitude      = dict["latitude"]      as? Double,
-//        let longitude     = dict["longitude"]     as? Double
-//        else {
-//          fatalError("Error parsing dict \(dict)")
-//      }
-//
-//      let wikipediaURL = URL(string: wikipediaLink)!
-//      let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-//      let vacationSpot = VacationSpot(
-//        identifier: identifier,
-//        name: name,
-//        locationName: locationName,
-//        thumbnailName: thumbnailName,
-//        whyVisit: whyVisit,
-//        whatToSee: whatToSee,
-//        weatherInfo: weatherInfo,
-//        userRating: userRating,
-//        wikipediaURL: wikipediaURL,
-//        coordinate: coordinate
-//      )
-//
-//      vacationSpots.append(vacationSpot)
-//    }
-    
-
   }
 }
