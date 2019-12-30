@@ -20,40 +20,7 @@ class MedicalCardViewController: UIViewController ,UIScrollViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-//        print(MedicalCard.shared.Person)
-//        if var personal = MedicalCard.shared.Person
-//        {
-//
-//            print(personal.Name)
-//            MedicalCard.shared.Person!.Name = "new name"
-//
-//        }
-
-        
-//        let lbl = UILabel(frame: CGRect(x: 60, y: 50, width: 230, height: 21))
-//        lbl.textAlignment = .center //For center alignment
-//        lbl.text = "Ron Weasley"
-//        lbl.textColor = .white
-//        lbl.backgroundColor = .lightGray//If required
-//        lbl.font = UIFont.systemFont(ofSize: 17)
-//
-//        //To display multiple lines in label
-//        lbl.numberOfLines = 0 //If you want to display only 2 lines replace 0(Zero) with 2.
-//        lbl.lineBreakMode = .byWordWrapping //Word Wrap
-//        // OR
-//        lbl.lineBreakMode = .byCharWrapping //Charactor Wrap
-//
-//        lbl.sizeToFit()//If required
-//        scrollView.addSubview(lbl)
-        
-        
-        
-            
-
-                
-        //        self.view.backgroundColor = UIColor.gray
-                
+       
                 //Add and setup scroll view
                 self.view.addSubview(self.scrollView)
                 self.scrollView.translatesAutoresizingMaskIntoConstraints = false;
@@ -84,13 +51,12 @@ class MedicalCardViewController: UIViewController ,UIScrollViewDelegate{
                 let label = UILabel(frame: CGRect(x:0, y:0, width: 300, height:210))
                 label.textAlignment = .center
                 label.text = "I'm a test label"
-        //        label.sizeToFit()
+        
                 self.stackView.addArrangedSubview(label)
 
                 let label2 = UILabel(frame: CGRect(x:0, y:210, width: 300, height:210))
                 label2.textAlignment = .center
                 label2.text = "I'm a test label2"
-        //        label2.sizeToFit()
                 self.stackView.addArrangedSubview(label2)
 
 
@@ -175,10 +141,6 @@ class MedicalCardViewController: UIViewController ,UIScrollViewDelegate{
                 //        button.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
                          self.stackView.addArrangedSubview(button9)
    
-        
-        
-        
-        
     }
 
 

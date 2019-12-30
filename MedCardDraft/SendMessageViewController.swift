@@ -7,13 +7,6 @@
 //
 
 import Foundation
-//
-//  ViewController.swift
-//  card-storage
-//
-//  Created by Stanley Ye on 12/26/19.
-//  Copyright © 2019 Stanley Ye. All rights reserved.
-//
 
 import UIKit
 import MessageUI

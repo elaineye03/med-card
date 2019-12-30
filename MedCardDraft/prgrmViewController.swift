@@ -76,15 +76,6 @@ class prgrmViewController: UIViewController {
         
         addBigLabels(labelName: "Doctor Contact")
         
-            //addBigLabels(labelName: String(numdoc))
-//            addLabels(labelName: "Kind", labelValue: doc.Kind)
-//            addLabels(labelName: "Name", labelValue: doc.Name)
-//            addLabels(labelName: "Phone", labelValue: doc.Phone)
-//            addLabels(labelName: "Email", labelValue: doc.Email)
-            
-        
-        //addBigLabels(labelName: "")
-//
     }
     func addLabels(labelName: String, labelValue: String)
     {

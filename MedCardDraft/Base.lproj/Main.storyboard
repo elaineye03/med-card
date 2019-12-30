@@ -340,9 +340,6 @@
                                             <rect key="frame" x="129.33333333333334" y="5" width="264.66666666666663" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <action selector="editingDIdEnd:" destination="cql-1b-gB9" eventType="editingDidEnd" id="o1x-qL-wew"/>
-                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
