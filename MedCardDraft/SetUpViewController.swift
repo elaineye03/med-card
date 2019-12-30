@@ -12,6 +12,8 @@ class SetUpViewController: UITableViewController {
     
      var medicalRows: [MedicalCardRow] = []
      var enableEdit = false
+     var eContactsIndex: [Int] = []
+     var isContactSection:Bool = false
     
     override func awakeFromNib() {
       super.awakeFromNib()
@@ -20,6 +22,38 @@ class SetUpViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return eContactsIndex.contains(indexPath.row)
+    }
+
+
+    override func tableView(_ tableView: UITableView, commit style: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+       medicalRows.remove(at: indexPath.row)
+       medicalRows.remove(at: indexPath.row)
+       medicalRows.remove(at: indexPath.row)
+       medicalRows.remove(at: indexPath.row)
+    
+       // need to update eContactsIndex too
+       //refresh screen
+       self.tableView.reloadData()
+       // need to remove it from MedicalCard object too
+       updateEContactsIndex(pos: indexPath.row)
+   }
+    
+    func updateEContactsIndex(pos: Int) {
+        for (index, element) in eContactsIndex.enumerated() {
+            if (element == pos) {
+                eContactsIndex.remove(at: index)
+                break
+            }
+        }
+        
+        for (index, element) in eContactsIndex.enumerated() {
+            if (element > pos) {
+                eContactsIndex[index] = element - 4
+            }
+        }
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return medicalRows.count
@@ -29,16 +63,26 @@ class SetUpViewController: UITableViewController {
       let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCardRowCell", for: indexPath) as! MedicalCardRowCell
       let medicalRow = medicalRows[indexPath.row]
       cell.keyLabel.text = medicalRow.key
-        print(medicalRow.value + " key: " + medicalRow.key)
+        //print(medicalRow.value + " key: " + medicalRow.key)
+        
         if (medicalRow.value == "(TITLE)")
         {
             cell.valueTextField.isHidden = true
+            if (medicalRow.key == "Contacts") {
+                isContactSection = true
+            } else {
+                isContactSection = false
+            }
         }
         else
         {
             cell.valueTextField.text = medicalRow.value
             cell.valueTextField.isEnabled = enableEdit
             cell.valueTextField.isHidden = false
+            
+            if (isContactSection == true && medicalRow.key == "Name") {
+                eContactsIndex.append(indexPath.row)
+            }
         }
         
         
