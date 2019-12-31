@@ -18,25 +18,11 @@ class AddContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
  
     @IBAction func saveButton(_ sender: UIButton) {
         let newContact = EmergencyContact(Name: nameTextField.text!, Phone: phoneTextField.text!, Email: emailTextField.text!, Relation: relationTextField.text!)
-        let numitems = (MedicalCard.shared.eContact.count)
         MedicalCard.shared.eContact.append(newContact)
-        for (contact) in MedicalCard.shared.eContact {
-            
-            print(contact.Name)
-            print(contact.Phone)
-            print(contact.Email)
-            print( contact.Relation)
-            print( " ")
-        }
+        self.navigationController?.popViewController(animated: true)
     }
-
-    
-   
-    
 }

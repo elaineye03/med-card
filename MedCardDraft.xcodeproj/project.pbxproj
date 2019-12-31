@@ -29,7 +29,6 @@
 		B934ABA423B9579400C10710 /* MedicalCardRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA323B9579400C10710 /* MedicalCardRowCell.swift */; };
 		B934ABA623B957CE00C10710 /* MedicalCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA523B957CE00C10710 /* MedicalCardRow.swift */; };
 		B934ABA823B9785F00C10710 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934ABA723B9785F00C10710 /* AddContactViewController.swift */; };
-		B9DB673023BACB420085D888 /* AddContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB672F23BACB420085D888 /* AddContactTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		B934ABA323B9579400C10710 /* MedicalCardRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCardRowCell.swift; sourceTree = "<group>"; };
 		B934ABA523B957CE00C10710 /* MedicalCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCardRow.swift; sourceTree = "<group>"; };
 		B934ABA723B9785F00C10710 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
-		B9DB672F23BACB420085D888 /* AddContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 				B934AB9923B7F33800C10710 /* Text911ViewController.swift */,
 				B934AB7D23B7D5F700C10710 /* Main.storyboard */,
 				B934ABA723B9785F00C10710 /* AddContactViewController.swift */,
-				B9DB672F23BACB420085D888 /* AddContactTableViewController.swift */,
 				B934ABA323B9579400C10710 /* MedicalCardRowCell.swift */,
 				B934ABA523B957CE00C10710 /* MedicalCardRow.swift */,
 				B934ABA123B9456F00C10710 /* SetUpViewController.swift */,
@@ -203,7 +200,6 @@
 				B934AB9823B7E69D00C10710 /* SendMessageViewController.swift in Sources */,
 				B934ABA223B9456F00C10710 /* SetUpViewController.swift in Sources */,
 				B934AB9223B7DE7F00C10710 /* MedicalInfo.swift in Sources */,
-				B9DB673023BACB420085D888 /* AddContactTableViewController.swift in Sources */,
 				B934AB7A23B7D5F700C10710 /* SceneDelegate.swift in Sources */,
 				B934AB9C23B8334D00C10710 /* Location.swift in Sources */,
 				B934AB9E23B85E0900C10710 /* MyLabel.swift in Sources */,
