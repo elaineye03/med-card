@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nQP-8M-d6n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nQP-8M-d6n">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Text911 View Controller-->
+        <!--Text 911-->
         <scene sceneID="DCF-ud-sVI">
             <objects>
                 <viewController id="oOi-EP-nae" customClass="Text911ViewController" customModule="MedCardDraft" customModuleProvider="target" sceneMemberID="viewController">
@@ -227,7 +227,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O4S-Tz-4hW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pOz-H4-rAq"/>
+                    <navigationItem key="navigationItem" title="Text 911" id="pOz-H4-rAq"/>
                     <connections>
                         <outlet property="ambulanceSwitch" destination="msl-xF-egR" id="bcw-SP-ExB"/>
                         <outlet property="descriptionPicker" destination="CMe-2w-R0t" id="iux-uy-hNx"/>
@@ -240,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="1010.144927536232" y="796.875"/>
         </scene>
-        <!--View Controller-->
+        <!--MedCard-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MedCardDraft" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MedCard" id="BYZ-38-t0r" customClass="ViewController" customModule="MedCardDraft" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,7 +346,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Srk-fp-ani"/>
+                    <navigationItem key="navigationItem" title="MedCard" id="Srk-fp-ani"/>
                     <connections>
                         <outlet property="call911Outlet" destination="Sfd-Ty-nNj" id="ruP-7Q-dFc"/>
                         <outlet property="medicalOutlet" destination="93j-5U-jGd" id="El0-K5-LiX"/>
@@ -678,7 +678,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7S8-bb-Svp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ysv-iK-yNn">
+                    <navigationItem key="navigationItem" title="Add Emergency Contact" id="Ysv-iK-yNn">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="jg8-Pj-wFd">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1o8-NF-SJ8">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
@@ -994,7 +994,7 @@
                             <outlet property="delegate" destination="ucs-Yl-F3J" id="w0J-uf-912"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Emergency Contact" id="fcl-Od-f4J">
+                    <navigationItem key="navigationItem" title="Text Emergency Contacts" id="fcl-Od-f4J">
                         <barButtonItem key="backBarButtonItem" title="Back" id="U8d-pR-1sy"/>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="400"/>
