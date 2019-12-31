@@ -999,6 +999,7 @@
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="400"/>
                     <connections>
+                        <outlet property="contacted911" destination="i4v-CN-hpQ" id="sYx-qG-WNV"/>
                         <outlet property="pickerOutlet" destination="gfM-jv-aJv" id="1zf-5D-ffg"/>
                     </connections>
                 </tableViewController>
