@@ -18,10 +18,7 @@ class AddContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameTextField.font = UIFont(name: nameTextField.font!.fontName, size: 25)
-        phoneTextField.font = UIFont(name: phoneTextField.font!.fontName, size: 25)
-        emailTextField.font = UIFont(name: emailTextField.font!.fontName, size: 25)
-        relationTextField.font = UIFont(name: relationTextField.font!.fontName, size: 25)
+        
     }
     
  
