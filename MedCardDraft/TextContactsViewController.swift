@@ -18,6 +18,10 @@ class TextContactsViewController: UITableViewController,   MFMessageComposeViewC
     var eContactsRows: [EmergencyContact] = []
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+//        self.view.backgroundColor = .black
+//        self.tableView.backgroundColor = .grey
+//        self.tableView?.frame = CGRect(x:10, y: (self.tableView?.frame.origin.y)! + 100, width: (self.tableView?.frame.size.width)!-20, height: (self.tableView?.frame.size.height - 400)!)
         for (numcontact, contact) in MedicalCard.shared.eContact {
             print(numcontact)
             
