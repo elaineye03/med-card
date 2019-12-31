@@ -18,14 +18,18 @@ class AddContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextField.font = UIFont(name: nameTextField.font!.fontName, size: 25)
+        phoneTextField.font = UIFont(name: phoneTextField.font!.fontName, size: 25)
+        emailTextField.font = UIFont(name: emailTextField.font!.fontName, size: 25)
+        relationTextField.font = UIFont(name: relationTextField.font!.fontName, size: 25)
     }
     
  
     @IBAction func saveButton(_ sender: UIButton) {
         let newContact = EmergencyContact(Name: nameTextField.text!, Phone: phoneTextField.text!, Email: emailTextField.text!, Relation: relationTextField.text!)
-        let numitems = String(MedicalCard.shared.eContact.count)
-        MedicalCard.shared.eContact[numitems] = newContact
-        for (numcontact, contact) in MedicalCard.shared.eContact {
+        let numitems = (MedicalCard.shared.eContact.count)
+        MedicalCard.shared.eContact.append(newContact)
+        for (contact) in MedicalCard.shared.eContact {
             
             print(contact.Name)
             print(contact.Phone)

@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
-    static let PLIST_FILE_NAME = "medicalcard.plist"
+    static let PLIST_FILE_NAME = "test.plist"
     static let NINE_ONE_ONE_PHONE_NUMBER = "tel://14087288046"
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
@@ -55,6 +55,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
              else {
                 fatalError("unable to get file")
              }
+        
+         print (fileURL)
       
         do {
              let plistXmlString  = try Data.init(contentsOf: fileURL)
@@ -94,13 +96,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
        
        let medinfo =  MedicalInfo(Allergy: "", Condition: "", Medication: "", Insurance: insuranceDict, BloodType: "")
        
-       let doctor = DrContact(Kind: "Physician", Name: "", Phone: "", Email: "")
+       let doctor = DrContact(Kind: "", Name: "", Phone: "", Email: "")
        
        let emergecontact = EmergencyContact(Name: "", Phone:"", Email: "", Relation:"")
-       let edict = ["0": emergecontact]
+       let earray = [emergecontact]
        let locat = Location(x: "0.0", y: "0.0")
        
-       let card = MedicalCard(person: personal, medical: medinfo, doctor: doctor,emergency: edict, loc: locat)
+       let card = MedicalCard(person: personal, medical: medinfo, doctor: doctor,emergency: earray, loc: locat)
 
        return card
     }

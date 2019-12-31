@@ -31,7 +31,7 @@ class SetUpViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit style: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         var i = (indexPath.row-23)/4
-        MedicalCard.shared.eContact[String(i-1)] = nil
+        MedicalCard.shared.eContact.remove(at: i)
        medicalRows.remove(at: indexPath.row)
        medicalRows.remove(at: indexPath.row)
        medicalRows.remove(at: indexPath.row)
@@ -155,19 +155,19 @@ class SetUpViewController: UITableViewController {
             let r = (index-23) % 4
             if (r == 1)
             {
-                MedicalCard.shared.eContact[String(i)]?.Name = text
+                MedicalCard.shared.eContact[i].Name = text
             }
             else if(r == 2)
             {
-                MedicalCard.shared.eContact[String(i)]?.Phone = text
+                MedicalCard.shared.eContact[i].Phone = text
             }
             else if(r == 3)
             {
-                MedicalCard.shared.eContact[String(i)]?.Email = text
+                MedicalCard.shared.eContact[i].Email = text
             }
             else if (r == 4)
             {
-                MedicalCard.shared.eContact[String(i)]?.Relation = text
+                MedicalCard.shared.eContact[i].Relation = text
             }
             
         default:

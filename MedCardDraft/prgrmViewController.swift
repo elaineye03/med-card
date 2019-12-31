@@ -45,36 +45,36 @@ class prgrmViewController: UIViewController {
         
         //add image views to stack view
         
-        addBigLabels(labelName: "Personal")
-        addLabels(labelName: "Name", labelValue: MedicalCard.shared.Person!.Name)
-        addLabels(labelName: "DOB", labelValue: MedicalCard.shared.Person!.DOB)
-        addLabels(labelName: "Gender", labelValue: MedicalCard.shared.Person!.Gender)
-        addLabels(labelName: "Address", labelValue: MedicalCard.shared.Person!.Address)
-        addLabels(labelName: "Phone", labelValue: MedicalCard.shared.Person!.Phone)
-        addLabels(labelName: "Email", labelValue: MedicalCard.shared.Person!.Email)
-        addLabels(labelName: "SSN", labelValue: MedicalCard.shared.Person!.SSN)
-        addBigLabels(labelName: "Medical Info")
-        addLabels(labelName: "Allergy", labelValue: MedicalCard.shared.Medinfo!.Allergy)
-        addLabels(labelName: "Medication", labelValue: MedicalCard.shared.Medinfo!.Medication)
-        addLabels(labelName: "Medical Condition", labelValue: MedicalCard.shared.Medinfo!.Condition)
-        addLabels(labelName: "Blood Type", labelValue: MedicalCard.shared.Medinfo!.BloodType)
-        addBigLabels(labelName: "Insurance")
-        addLabels(labelName: "Provider", labelValue: MedicalCard.shared.Medinfo!.Insurance["provider"]!)
-        addLabels(labelName: "Group", labelValue: MedicalCard.shared.Medinfo!.Insurance["group"]!)
-        addLabels(labelName: "Policy", labelValue: MedicalCard.shared.Medinfo!.Insurance["policy"]!)
-        addLabels(labelName: "InsuredName", labelValue: MedicalCard.shared.Medinfo!.Insurance["InsuredName"]!)
-        
-        addBigLabels(labelName: "Emergency Contact")
-        for (numcontact, contact) in MedicalCard.shared.eContact {
-            
-            addLabels(labelName: "Name", labelValue: contact.Name)
-            addLabels(labelName: "Phone", labelValue: contact.Phone)
-            addLabels(labelName: "Email", labelValue: contact.Email)
-            addLabels(labelName: "Relationship", labelValue: contact.Relation)
-            
-        }
-        
-        addBigLabels(labelName: "Doctor Contact")
+//        addBigLabels(labelName: "Personal")
+//        addLabels(labelName: "Name", labelValue: MedicalCard.shared.Person!.Name)
+//        addLabels(labelName: "DOB", labelValue: MedicalCard.shared.Person!.DOB)
+//        addLabels(labelName: "Gender", labelValue: MedicalCard.shared.Person!.Gender)
+//        addLabels(labelName: "Address", labelValue: MedicalCard.shared.Person!.Address)
+//        addLabels(labelName: "Phone", labelValue: MedicalCard.shared.Person!.Phone)
+//        addLabels(labelName: "Email", labelValue: MedicalCard.shared.Person!.Email)
+//        addLabels(labelName: "SSN", labelValue: MedicalCard.shared.Person!.SSN)
+//        addBigLabels(labelName: "Medical Info")
+//        addLabels(labelName: "Allergy", labelValue: MedicalCard.shared.Medinfo!.Allergy)
+//        addLabels(labelName: "Medication", labelValue: MedicalCard.shared.Medinfo!.Medication)
+//        addLabels(labelName: "Medical Condition", labelValue: MedicalCard.shared.Medinfo!.Condition)
+//        addLabels(labelName: "Blood Type", labelValue: MedicalCard.shared.Medinfo!.BloodType)
+//        addBigLabels(labelName: "Insurance")
+//        addLabels(labelName: "Provider", labelValue: MedicalCard.shared.Medinfo!.Insurance["provider"]!)
+//        addLabels(labelName: "Group", labelValue: MedicalCard.shared.Medinfo!.Insurance["group"]!)
+//        addLabels(labelName: "Policy", labelValue: MedicalCard.shared.Medinfo!.Insurance["policy"]!)
+//        addLabels(labelName: "InsuredName", labelValue: MedicalCard.shared.Medinfo!.Insurance["InsuredName"]!)
+//
+//        addBigLabels(labelName: "Emergency Contact")
+//        for (numcontact, contact) in MedicalCard.shared.eContact {
+//
+//            addLabels(labelName: "Name", labelValue: contact.Name)
+//            addLabels(labelName: "Phone", labelValue: contact.Phone)
+//            addLabels(labelName: "Email", labelValue: contact.Email)
+//            addLabels(labelName: "Relationship", labelValue: contact.Relation)
+//
+//        }
+//
+//        addBigLabels(labelName: "Doctor Contact")
         
     }
     func addLabels(labelName: String, labelValue: String)
