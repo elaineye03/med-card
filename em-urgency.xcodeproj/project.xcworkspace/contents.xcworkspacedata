@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MedCardDraft.xcodeproj">
+      location = "self:/Users/elaine/Desktop/MedCardDraft/em-urgency.xcodeproj">
    </FileRef>
 </Workspace>

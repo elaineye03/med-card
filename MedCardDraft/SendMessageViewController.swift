@@ -32,7 +32,7 @@ class SendMessageViewController: UIViewController,  MFMessageComposeViewControll
         composeVC.messageComposeDelegate = self
         
         // Configure the fields of the interface.
-        composeVC.recipients = ["4087288046"]
+        composeVC.recipients = ["911"]
         composeVC.body = "I love Swift!"
         
         // Present the view controller modally.
@@ -45,7 +45,7 @@ class SendMessageViewController: UIViewController,  MFMessageComposeViewControll
     
     func makeACall() {
           
-        if let url = URL(string: "tel://14087288046") {
+        if let url = URL(string: "tel://911") {
           UIApplication.shared.canOpenURL(url)
            if #available(iOS 10, *) {
                UIApplication.shared.open(url)

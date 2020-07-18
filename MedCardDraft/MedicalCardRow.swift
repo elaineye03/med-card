@@ -69,7 +69,7 @@ extension MedicalCardRow {
     let kRow = MedicalCardRow(key: "Condition", value:  MedicalCard.shared.Medinfo!.Condition)
     cardRows.append(kRow)
     
-    let lRow = MedicalCardRow(key: "BloodType", value:  MedicalCard.shared.Medinfo!.BloodType)
+    let lRow = MedicalCardRow(key: "Blood Type", value:  MedicalCard.shared.Medinfo!.BloodType)
     cardRows.append(lRow)
     
     let titleInsurance = MedicalCardRow(key: "Insurance Info", value:  "(TITLE)")

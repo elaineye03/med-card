@@ -149,24 +149,29 @@ class SetUpViewController: UITableViewController {
         case 21:
             MedicalCard.shared.dContact!.Email = text
         case 22:
-            MedicalCard.shared.dContact!.Phone = text
+            MedicalCard.shared.dContact!.Kind = text
         case 23...tableView.numberOfRows(inSection: 0):
-            let i = (index-23) / 4
-            let r = (index-23) % 4
-            if (r == 1)
+            let i = (index-23-1) / 4
+            let r = (index-23-1) % 4
+            print("------")
+            print(String(index) + "-23 / 4 = " + String(i-1))
+            print(String(index) + "-23)-1 % 4 = " + String(r))
+            if (r == 0)
             {
                 MedicalCard.shared.eContact[i].Name = text
             }
-            else if(r == 2)
+            else if(r == 1)
             {
                 MedicalCard.shared.eContact[i].Phone = text
             }
-            else if(r == 3)
+            else if(r == 2)
             {
+                print("DOES THIS UPDATE")
                 MedicalCard.shared.eContact[i].Email = text
             }
-            else if (r == 4)
+            else if (r == 3)
             {
+                print("IT IS IN")
                 MedicalCard.shared.eContact[i].Relation = text
             }
             

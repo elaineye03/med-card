@@ -129,7 +129,7 @@ class Text911ViewController : UIViewController,  MFMessageComposeViewControllerD
         composeVC.messageComposeDelegate = self
         
         // Configure the fields of the interface.
-        composeVC.recipients = ["4087288046"]
+        composeVC.recipients = ["911"]
         //composeVC.body = "I love Swift!"
         
         composeVC.body = msg

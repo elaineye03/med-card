@@ -11,7 +11,7 @@ import MessageUI
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     static let PLIST_FILE_NAME = "test.plist"
-    static let NINE_ONE_ONE_PHONE_NUMBER = "tel://14087288046"
+    static let NINE_ONE_ONE_PHONE_NUMBER = "tel://911"
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         controller.dismiss(animated: true, completion: nil)

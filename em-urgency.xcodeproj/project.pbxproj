@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		0197942D23B9C6FD0004C17A /* TextContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContactsViewController.swift; sourceTree = "<group>"; };
-		B934AB7423B7D5F700C10710 /* MedCardDraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedCardDraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B934AB7423B7D5F700C10710 /* em-urgency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "em-urgency.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B934AB7723B7D5F700C10710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B934AB7923B7D5F700C10710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B934AB7B23B7D5F700C10710 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		B934AB7523B7D5F700C10710 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B934AB7423B7D5F700C10710 /* MedCardDraft.app */,
+				B934AB7423B7D5F700C10710 /* em-urgency.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,9 +118,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B934AB7323B7D5F700C10710 /* MedCardDraft */ = {
+		B934AB7323B7D5F700C10710 /* em-urgency */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B934AB8823B7D5F900C10710 /* Build configuration list for PBXNativeTarget "MedCardDraft" */;
+			buildConfigurationList = B934AB8823B7D5F900C10710 /* Build configuration list for PBXNativeTarget "em-urgency" */;
 			buildPhases = (
 				B934AB7023B7D5F700C10710 /* Sources */,
 				B934AB7123B7D5F700C10710 /* Frameworks */,
@@ -130,9 +130,9 @@
 			);
 			dependencies = (
 			);
-			name = MedCardDraft;
+			name = "em-urgency";
 			productName = MedCardDraft;
-			productReference = B934AB7423B7D5F700C10710 /* MedCardDraft.app */;
+			productReference = B934AB7423B7D5F700C10710 /* em-urgency.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -150,7 +150,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B934AB6F23B7D5F700C10710 /* Build configuration list for PBXProject "MedCardDraft" */;
+			buildConfigurationList = B934AB6F23B7D5F700C10710 /* Build configuration list for PBXProject "em-urgency" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -163,7 +163,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B934AB7323B7D5F700C10710 /* MedCardDraft */,
+				B934AB7323B7D5F700C10710 /* em-urgency */,
 			);
 		};
 /* End PBXProject section */
@@ -357,7 +357,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.elaineye.MedCardDraft;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "em-urgency";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -376,7 +376,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.elaineye.MedCardDraft;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "em-urgency";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -385,7 +385,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B934AB6F23B7D5F700C10710 /* Build configuration list for PBXProject "MedCardDraft" */ = {
+		B934AB6F23B7D5F700C10710 /* Build configuration list for PBXProject "em-urgency" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B934AB8623B7D5F900C10710 /* Debug */,
@@ -394,7 +394,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B934AB8823B7D5F900C10710 /* Build configuration list for PBXNativeTarget "MedCardDraft" */ = {
+		B934AB8823B7D5F900C10710 /* Build configuration list for PBXNativeTarget "em-urgency" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B934AB8923B7D5F900C10710 /* Debug */,
