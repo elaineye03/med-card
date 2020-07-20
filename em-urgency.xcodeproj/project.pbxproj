@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0197942E23B9C6FD0004C17A /* TextContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197942D23B9C6FD0004C17A /* TextContactsViewController.swift */; };
+		9F6C4B4A24C5202400E84FE4 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C4B4924C5202300E84FE4 /* EULAViewController.swift */; };
 		B934AB7823B7D5F700C10710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934AB7723B7D5F700C10710 /* AppDelegate.swift */; };
 		B934AB7A23B7D5F700C10710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934AB7923B7D5F700C10710 /* SceneDelegate.swift */; };
 		B934AB7C23B7D5F700C10710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934AB7B23B7D5F700C10710 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		0197942D23B9C6FD0004C17A /* TextContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContactsViewController.swift; sourceTree = "<group>"; };
+		9F6C4B4924C5202300E84FE4 /* EULAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
 		B934AB7423B7D5F700C10710 /* em-urgency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "em-urgency.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B934AB7723B7D5F700C10710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B934AB7923B7D5F700C10710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		B934AB7623B7D5F700C10710 /* MedCardDraft */ = {
 			isa = PBXGroup;
 			children = (
+				9F6C4B4924C5202300E84FE4 /* EULAViewController.swift */,
 				B934AB7723B7D5F700C10710 /* AppDelegate.swift */,
 				B934AB7923B7D5F700C10710 /* SceneDelegate.swift */,
 				B934AB7B23B7D5F700C10710 /* ViewController.swift */,
@@ -191,6 +194,7 @@
 				0197942E23B9C6FD0004C17A /* TextContactsViewController.swift in Sources */,
 				B934AB7823B7D5F700C10710 /* AppDelegate.swift in Sources */,
 				B934ABA823B9785F00C10710 /* AddContactViewController.swift in Sources */,
+				9F6C4B4A24C5202400E84FE4 /* EULAViewController.swift in Sources */,
 				B934ABA023B878DB00C10710 /* prgrmViewController.swift in Sources */,
 				B934AB9623B7DEAE00C10710 /* EmergencyContact.swift in Sources */,
 				B934AB8C23B7D70600C10710 /* MedicalCardViewController.swift in Sources */,
