@@ -32,11 +32,7 @@ class EULAViewController: UIViewController {
          
         Last updated: 7/19/20
          
-        Please read this End-User License Agreement carefully before clicking the "I Agree" button, downloading or using em-urgency Application.
-         
-        By clicking the "I Agree" button, downloading or using the Application, you are agreeing to be bound by the terms and conditions of this Agreement.
-         
-        If you do not agree to the terms of this Agreement, do not click on the "I Agree" button and do not download or use the Application.
+        Please read this End-User License Agreement carefully before downloading or using em-urgency Application.
          
         License: I grant you a revocable, non-exclusive, non-transferable, limited license to download, install and use the Application solely for your personal, non-commercial purposes strictly in accordance with the terms of this Agreement.
          

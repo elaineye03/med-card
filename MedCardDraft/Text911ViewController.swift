@@ -113,7 +113,8 @@ class Text911ViewController : UIViewController,  MFMessageComposeViewControllerD
         {
             descripMsg += "I have already texted 911. "
         }
-        descripMsg = descripMsg + "This is my Location: " + MedicalCard.shared.Location!.x + ", " + MedicalCard.shared.Location!.y
+        descripMsg = descripMsg + "This is my location as of now: https://www.google.com/maps/place/" + "(" + MedicalCard.shared.Location!.x + "," +
+        MedicalCard.shared.Location!.y + ")"
        
         descripMsg += " This is my callback number: " + MedicalCard.shared.Person!.Phone
 
