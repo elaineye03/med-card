@@ -32,77 +32,10 @@ extension MedicalCardRow {
     var cardRows: [MedicalCardRow] = []
     
     let titlePersonal = MedicalCardRow(key: "Personal Info", value:  "(TITLE)")
-    cardRows.append(titlePersonal)
-    
-    let card =  MedicalCard.shared
-    
+       cardRows.append(titlePersonal)
+       
     let aRow = MedicalCardRow(key: "Name", value: MedicalCard.shared.Person!.Name)
-    cardRows.append(aRow)
-    
-    let bRow = MedicalCardRow(key: "Date of Birth", value: MedicalCard.shared.Person!.DOB)
-    cardRows.append(bRow)
-    
-    let cRow = MedicalCardRow(key: "Gender", value:  MedicalCard.shared.Person!.Gender)
-    cardRows.append(cRow)
-    
-    let eRow = MedicalCardRow(key: "Address", value:  MedicalCard.shared.Person!.Address)
-    cardRows.append(eRow)
-    
-    let fRow = MedicalCardRow(key: "Phone", value:  MedicalCard.shared.Person!.Phone)
-    cardRows.append(fRow)
-    
-    let gRow = MedicalCardRow(key: "Email", value:  MedicalCard.shared.Person!.Email)
-    cardRows.append(gRow)
-    
-    let hRow = MedicalCardRow(key: "SSN", value:  MedicalCard.shared.Person!.SSN)
-    cardRows.append(hRow)
-    
-    let titleMed = MedicalCardRow(key: "Medical Info", value:  "(TITLE)")
-    cardRows.append(titleMed)
-    
-    let iRow = MedicalCardRow(key: "Allergy", value:  MedicalCard.shared.Medinfo!.Allergy)
-    cardRows.append(iRow)
-    
-    let jRow = MedicalCardRow(key: "Medication", value:  MedicalCard.shared.Medinfo!.Medication)
-    cardRows.append(jRow)
-    
-    let kRow = MedicalCardRow(key: "Condition", value:  MedicalCard.shared.Medinfo!.Condition)
-    cardRows.append(kRow)
-    
-    let lRow = MedicalCardRow(key: "Blood Type", value:  MedicalCard.shared.Medinfo!.BloodType)
-    cardRows.append(lRow)
-    
-    let titleInsurance = MedicalCardRow(key: "Insurance Info", value:  "(TITLE)")
-    cardRows.append(titleInsurance)
-    
-    let mRow = MedicalCardRow(key: "Provider", value:  MedicalCard.shared.Medinfo!.Insurance["provider"]!)
-    cardRows.append(mRow)
-    
-    let nRow = MedicalCardRow(key: "Group", value:  MedicalCard.shared.Medinfo!.Insurance["group"]!)
-    cardRows.append(nRow)
-    
-    let oRow = MedicalCardRow(key: "Policy", value:  MedicalCard.shared.Medinfo!.Insurance["policy"]!)
-    cardRows.append(oRow)
-    
-    let pRow = MedicalCardRow(key: "InsuredName", value:  MedicalCard.shared.Medinfo!.Insurance["InsuredName"]!)
-    cardRows.append(pRow)
-    
-    
-    
-    let titleDoc = MedicalCardRow(key: "Doctor Contact", value:  "(TITLE)")
-    cardRows.append(titleDoc)
-    
-    
-    let nameRow = MedicalCardRow(key: "Name", value: MedicalCard.shared.dContact!.Name)
-    cardRows.append(nameRow)
-    let phoneRow = MedicalCardRow(key: "Phone", value:  MedicalCard.shared.dContact!.Phone)
-    cardRows.append(phoneRow)
-    let emailRow = MedicalCardRow(key: "Email", value:  MedicalCard.shared.dContact!.Email)
-    cardRows.append(emailRow)
-    let kindRow = MedicalCardRow(key: "Kind", value:  MedicalCard.shared.dContact!.Kind)
-    cardRows.append(kindRow)
-
-        
+       cardRows.append(aRow)
 
     let titleEmergency = MedicalCardRow(key: "Contacts", value:  "(TITLE)")
     cardRows.append(titleEmergency)

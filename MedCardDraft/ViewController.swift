@@ -226,5 +226,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         self.present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func websiteButton(_ sender: Any) {
+        UIApplication.shared.open(URL(string:"https://elaineye.wixsite.com/medical/paper-card")! as URL, options: [:], completionHandler:nil)
+    }
 }
 
